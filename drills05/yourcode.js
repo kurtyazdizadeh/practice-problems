@@ -1,7 +1,3 @@
-
-
-function populateRecords(){
+function populateRecords(purchaseRecords){
 
 }
-
-

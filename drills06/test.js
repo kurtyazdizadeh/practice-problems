@@ -1,7 +1,7 @@
 
 
 var testVals = [{
-  question: `removeClassFromElement: create a function that takes in 
+  question: `removeClassFromElement: create a function that takes in
   an element, and the class to remove from that element.
   It should use the removeClass method, not toggle
   `,
@@ -9,17 +9,17 @@ var testVals = [{
     inputs: [
         [
           '.wasRed','wasRed'
-        ], 
+        ],
         [
           '#redNotBlue','wasBlue'
         ],
         [
           '.wasGreen', 'wasGreen'
         ]
-      
+
     ],
-    outputs:    
-    [  
+    outputs:
+    [
       undefined, undefined
     ],
     testFunctions: [
@@ -27,52 +27,52 @@ var testVals = [{
         message: 'Should have removed class "wasRed" from all elements with a class of .wasRed.  If it is wrong, did you use toggle instead of hide?',
         test: ()=> {
           let correctCheck = 0;
-          if( $('.wasRed').length === 0 ){ 
-            correctCheck++ 
+          if( $('.wasRed').length === 0 ){
+            correctCheck++
           } else {
             return 'there was an element with class wasRed, there should be none'
           }
           removeClassFromElement('.hasRed','hasRed')
-          if( $('.wasRed').length === 0 ){ 
-            correctCheck++ 
+          if( $('.wasRed').length === 0 ){
+            correctCheck++
           } else {
             return 'tried to remove wasRed again.  It should not be present, but now it is!  Did you use toggleClass?'
           }
-            
+
           return correctCheck === 2;
         }
-        
-      }, 
+
+      },
       {
         message: 'should have removed the class notBlue from the element with an ID of redNotBlue and no where else',
         test: ()=> {
-          return (!($('#redNotBlue').hasClass('wasBlue')) && $('.wasBlue').length === 1 ) 
+          return (!($('#redNotBlue').hasClass('wasBlue')) && $('.wasBlue').length === 1 )
         }
-      }, 
+      },
       {
         message: 'Should have removed all classes of "wasGreen" from elements with a class of .wasGreen.  ',
         test: ()=> {
-          return $('.wasGreen').length === 0 
+          return $('.wasGreen').length === 0
         }
       }
-      
+
     ]
   },
 
   functionToTest: 'removeClassFromElement'
 },
 {
-  question: `toggleClassOnElement: create a function that takes in an 
+  question: `toggleClassOnElement: create a function that takes in an
   element and a class.  It toggles the class on the target element
   `,
   testVals: {
     inputs: [
-        [ '.needBack', 'willBeGreenText' ], 
+        [ '.needBack', 'willBeGreenText' ],
         [ '#redNotBlue', 'wasRed'],
         [ '.limeBorder', 'limeBorder']
-      
+
     ],
-    outputs:    
+    outputs:
     [  undefined,
        undefined,
        undefined
@@ -96,7 +96,7 @@ var testVals = [{
             return $('.limeBorder').length === 0;
         }
       }
-      
+
     ]
   },
 
@@ -111,12 +111,12 @@ var testVals = [{
   `,
   testVals: {
     inputs: [
-        ['#hideMe','hide'], 
+        ['#hideMe','hide'],
         ['#removeChildren','removeChildren'],
         ['#removeElement','removeSelf'],
-      
+
     ],
-    outputs:    
+    outputs:
     [  undefined,
        undefined,
        undefined,
@@ -125,22 +125,22 @@ var testVals = [{
       {
         message: 'the element with an ID of hideMe should be hidden now',
         test: ()=> {
-          return $('#hideMe').css('display') === 'none'; 
+          return $('#hideMe').css('display') === 'none';
         }
       },
       {
         message: 'the element with an ID of removeChildren should be empty but #removeChildren itself should still exist',
         test: ()=> {
-          return $('#removeChildren').length === 1 && $('#removeChildren').children().length === 0; 
+          return $('#removeChildren').length === 1 && $('#removeChildren').children().length === 0;
         }
       },
       {
         message: 'the element with an ID of removeElement should be no longer present',
         test: ()=> {
-          return $('#removeElement').length === 0; 
+          return $('#removeElement').length === 0;
         }
       }
-      
+
     ]
   },
 
@@ -157,13 +157,13 @@ var testVals = [{
     inputs: [
         [
           '.addID', 'id', 'blueID'
-        ], 
-        [
-          '#targetImg', 'src','https://myperbole.files.wordpress.com/2015/04/good-job.png?w=665' 
         ],
-      
+        [
+          '#targetImg', 'src','https://myperbole.files.wordpress.com/2015/04/good-job.png?w=665'
+        ],
+
     ],
-    outputs:    
+    outputs:
     [  undefined,
        undefined,
     ],
@@ -180,14 +180,14 @@ var testVals = [{
           return $('#targetImg').attr('src') === 'https://myperbole.files.wordpress.com/2015/04/good-job.png?w=665'
         }
       }
-      
+
     ]
   },
 
   functionToTest: 'addAttributeToElement'
 },
 {
-  question: `putPosInElement: given an element, grab that element's 
+  question: `putPosInElement: given an element, grab that element's
   position and store it inside the text of that element in the following format:
   x: 30px<br>y: 50px
   Note the break element between the two.
@@ -199,7 +199,7 @@ var testVals = [{
     inputs: [
         ['#getPos']
     ],
-    outputs:    
+    outputs:
     [  {x: 220, y: 220},
     ],
     testFunctions: [
@@ -208,15 +208,13 @@ var testVals = [{
         test: ()=> {
           console.log($("#getPos").html());
           return $("#getPos").html() === 'x: 220px<br>y: 220px'
-          
+
         }
-        
+
       },
-      
+
     ]
   },
 
   functionToTest: 'putPosInElement'
 }]
-
-
