@@ -8,3 +8,9 @@
 #iShouldBeYellow{
 	color: yellow;
 }
+.noMakeGreen {
+	color: blue;
+}
+section {
+	background-color: purple;
+}
