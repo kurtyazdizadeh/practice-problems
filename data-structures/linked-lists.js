@@ -90,6 +90,15 @@ class LinkedList {
       }
     }
   }
+  reverse() {
+    const array = this.printList();
+
+    const reversedList = new LinkedList(array[array.length-1]);
+    for (let i=array.length-2; i >= 0; i--){
+      reversedList.append(array[i]);
+    }
+    return reversedList;
+  }
 }
 
 const myLinkedList = new LinkedList(10);
@@ -100,3 +109,4 @@ myLinkedList.insert(3,222)
 myLinkedList.remove(3);
 console.log(myLinkedList.printList())
 console.log(myLinkedList);
+console.log(myLinkedList.reverse())
