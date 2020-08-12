@@ -24,7 +24,7 @@ class SpiralMatrix {
     }
   }
   fill() {
-    while (this.counter !== this.size ** 2 + 1) {
+    while (this.counter < this.size ** 2 + 1) {
       let [dRow, dCol] = this.directions[this.directionIndex];
       let [nextRow, nextCol] = [this.row + dRow, this.col + dCol];
 
